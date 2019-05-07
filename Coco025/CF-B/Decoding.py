@@ -1,20 +1,13 @@
 n = int(input())
 s = input()
-
 res = ""
+
 for x in range(n-1, -1, -2):
-    #print(1, x)
-    res += s[x]
-i = 1
-if(n%2 == 0):
-    i = 0
+    res = s[x] + res
+
+i = 1 if n%2 else 0
+
 for x in range(i, n, 2):
-    #print(2, x)
-    res += s[x]
-
-print(res[::-1])
-
-
-
-
-
+    res = s[x] + res
+    
+print(res)
