@@ -51,18 +51,20 @@ int main(){
 	cin>>casos;
 	while(casos--){
 	    int ciudades, calles;
-	    cin>>ciudades>>calles;
+	    scanf("%d %d", &ciudades, &calles);
 	    uf.init(ciudades+10);
 	    for(int i=0;i<calles;i++){
 	        int a, b, c;
-	        cin>>a>>b>>c;
+	        //cin>>a>>b>>c;
+	        scanf("%d %d %d", &a, &b, &c);
 	        uf.join(a, b);
 	    }
 	    E.clear();
-	    cin>>calles;
+	    scanf("%d", &calles);
 	    while(calles--){
 	        int a, b, c;
-	        cin>>a>>b>>c;
+	        //cin>>a>>b>>c;
+	        scanf("%d %d %d", &a, &b, &c);
 	        E.push_back({a, b, c});
 	    }
 	    nuevos=0;
@@ -72,14 +74,17 @@ int main(){
             if(uf.comp(1)!=uf.comp(i))posible=false;
         }
         if(!posible){
-            cout<<"You better hire someone else"<<endl;
+            //cout<<"You better hire someone else"<<endl;
+            printf("You better hire someone else\n");
         }
         else{
             if(nuevos==0){
-                cout<<"Thank you, Goodbye"<<endl;
+                //cout<<"Thank you, Goodbye"<<endl;
+                printf("Thank you, Goodbye\n");
             }
             else{
                 cout<<costo1<<endl;
+                //cout<<costo1<<endl;
             }
         }
 	
