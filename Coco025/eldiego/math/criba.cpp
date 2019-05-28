@@ -10,13 +10,13 @@ using namespace std;
 #define dprint(v) cerr << #v"=" << v << endl //;)
 #define forr(i,a,b) for(int i=(a); i<(b); i++)
 #define forn(i,n) forr(i,0,n)
-#define forall(it,v) for(typeof(v.begin()) it=v.begin();it!=v.end();++it)
+#define forall(it,v) for(auto it=v.begin();it!=v.end();++it)
 #define sz(c) ((int)c.size())
 #define zero(v) memset(v, 0, sizeof(v))
 typedef long long ll;
 typedef pair<int,int> ii;
 
-#define MAXP 100000	//no necesariamente primo
+#define MAXP 30	//no necesariamente primo
 int criba[MAXP+1];
 void crearcriba(){
 	int w[] = {4,2,4,2,4,6,2,6};
@@ -38,13 +38,10 @@ int main() {
 	freopen("primos", "w", stdout);
 	buscarprimos();
 	cout << '{';
-	bool first=true;
-	forall(it, primos){
-		if(first) first=false;
-		else cout << ',';
-		cout << *it;
-    }
-    cout << "};\n";
-    return 0;
+	for (int x = 0; x<MAXP; x++){
+		cout << criba[x] << ",";
+	}
+	cout << "};\n";
+	
 }
 
